@@ -1,6 +1,6 @@
-import { InmetaImage } from '../root.types';
+import { LynglandskapImage } from '../root.types';
 
 export type ISanityImage = {
 	_type: 'image';
-	image: InmetaImage;
+	image: LynglandskapImage;
 };
