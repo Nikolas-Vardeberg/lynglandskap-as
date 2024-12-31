@@ -33,7 +33,7 @@ export const MENU_QUERY = groq`*[_id==$menuId][0] {
     }
 }`;
 
-export const HOMEPAGE_QUERY = groq`*[_id=="homePage"][0] {  
+export const HOMEPAGE_QUERY = groq`*[_id==$homepageId][0] {  
     _id,
     _type,
     title,

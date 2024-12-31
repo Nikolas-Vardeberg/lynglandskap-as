@@ -5,7 +5,9 @@ import HomeView from '@/views/home-view';
 import PreviewWrapper from '@/wrappers/presentation/PreviewWrapper';
 
 const getHook = async () => {
-	return useLoader<IHomePage>(HOMEPAGE_QUERY, {});
+	return useLoader<IHomePage>(HOMEPAGE_QUERY, {
+    homepageId: 'homePage',
+  });
 };
 
 export default async function Home() {
@@ -16,6 +18,7 @@ export default async function Home() {
 			component={HomeView}
 			initial={initial}
 			query={HOMEPAGE_QUERY}
+      params={{ homepageId: "homePage" }}
 		/>
 	);
 }
