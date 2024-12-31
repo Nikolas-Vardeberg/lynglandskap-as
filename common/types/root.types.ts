@@ -2,11 +2,13 @@ import { SanityDocument } from "next-sanity";
 import { Image } from "sanity";
 import { Editor } from "./editor.types";
 import { Tag } from "./tag.types";
-import { BottomContentData } from "./layout/bottom-content.types";
+import { BottomContent, BottomContentData } from "./layout/bottom-content.types";
 import { Article } from "./pages/article.types";
 import { TransportPage } from "./pages/transport-page.types";
 import { CustomerCase } from "./pages/customer-case.types";
 import { InfoPage } from "./pages/info-page.types";
+import { Block } from "./blocks/blocks.types";
+import { IMenu } from "./layout/menu.types";
 
 
 export type Override<T, U> = Omit<T, keyof U> & U;
@@ -72,4 +74,68 @@ export type BasePage = {
 	};
 	overrideBottomContent: boolean;
 	bottomContent?: BottomContentData;
+};
+
+export type IHomePage = {
+	_id: string;
+	_type: 'homePage';
+	mainImage: LynglandskapImage;
+	hero: {
+		title: string;
+		description: SanityRichtTextType;
+		reference: Page;
+		linkText: string;
+	};
+	sections: CCSection[];
+	overrideBottomContent: boolean;
+	bottomContent?: BottomContentData;
+};
+
+// CrayonConsulting Section
+export type CCSection = {
+	blocks: Block[];
+	color: 'white';
+};
+
+export type BlockAreaDefaults = {
+	article?: Block[];
+	customerCase?: Block[];
+	infoPage?: Block[];
+	transportPage?: Block[];
+	notFound?: Block[];
+};
+
+export type RootSEO = {
+	title: string;
+	template: string;
+	description: string;
+	baseUrl: string;
+	image: LynglandskapImage;
+	imageInfo: {
+		metadata: {
+			dimensions: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+};
+
+export type ExternalPageReference = SanityDocument & {
+	_type: 'externalPageReference';
+	teaser: BasePage['teaser'];
+	url: string;
+};
+
+export type SimplePageReference = {
+	_id: string;
+	_type: string;
+	title: string;
+	slug: string;
+};
+
+export type RootData = {
+	menu: IMenu;
+	bottomContent: BottomContent;
+	blockAreaDefaults: BlockAreaDefaults;
 };
