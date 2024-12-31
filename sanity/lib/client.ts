@@ -1,10 +1,27 @@
-import { createClient } from 'next-sanity'
+import { createClient } from 'next-sanity';
 
-import { apiVersion, dataset, projectId } from '../env'
+import { apiVersion, dataset, projectId, useCdn } from '../env';
 
 export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
-})
+	apiVersion,
+	dataset,
+	projectId,
+	useCdn,
+	perspective: 'published',
+	stega: {
+		enabled: false,
+		studioUrl: '/studio',
+	},
+});
+
+export const previewClient = createClient({
+	apiVersion,
+	dataset,
+	projectId,
+	useCdn: false,
+	token: process.env.SANITY_API_READ_TOKEN,
+	perspective: 'previewDrafts',
+	stega: {
+		studioUrl: 'http://localhost:3000/studio',
+	},
+});
