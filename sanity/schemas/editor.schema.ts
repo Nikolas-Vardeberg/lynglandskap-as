@@ -14,7 +14,7 @@ export const editor = defineType({
 		{
 			name: 'title',
 			title: 'Stilling/rolle',
-			type: 'internationalizedArrayString',
+			type: 'string',
 		},
 		{
 			name: 'company',
@@ -24,7 +24,7 @@ export const editor = defineType({
 		{
 			name: 'department',
 			title: 'Avdeling',
-			type: 'internationalizedArrayString',
+			type: 'string',
 		},
 		{
 			name: "bookMeetingLink",

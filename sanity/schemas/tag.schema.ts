@@ -13,7 +13,7 @@ export const tag = defineType({
 			name: 'title',
 			description: 'Taggen vil presenteres som "#[tag tittel]" på siden.',
 			title: 'Tittel',
-			type: 'internationalizedArrayString',
+			type: 'string',
 		},
 		{
 			name: 'slug',

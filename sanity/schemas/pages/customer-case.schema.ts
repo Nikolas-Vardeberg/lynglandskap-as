@@ -51,13 +51,6 @@ export const customerCase = defineType({
 			initialValue: new Date().toISOString(),
 			validation: (Rule) => Rule.required(),
 		},
-		{
-			name: 'teaserLabel',
-			type: 'string',
-			title: 'Kundenavn',
-			description: 'Kundenavn brukt i transportinnganger',
-			group: 'general',
-		},
         tags({ group: 'general' }),
 		image({
 			name: 'mainImage',
@@ -88,12 +81,6 @@ export const customerCase = defineType({
 			group: 'general',
 			of: [{ type: 'reference', to: [{ type: 'industry' }] }],
 		},
-		image({
-			group: 'teaser',
-			name: 'teaserImage',
-			title: 'Teaser-bilde',
-			description: 'Bilde brukt i transportinnganger og SEO (overskriver hovedbilde)',
-		}),
         ...teaserGroup,
 	],
 	preview: {

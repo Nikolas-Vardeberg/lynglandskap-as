@@ -13,7 +13,7 @@ export const tagCategorySchema = defineType({
 			name: 'title',
 			description: 'Begrens antall kategorier for å unngå tagg-jungel.',
 			title: 'Tittel',
-			type: 'internationalizedArrayString',
+			type: 'string',
 		},
 	],
 	preview: {

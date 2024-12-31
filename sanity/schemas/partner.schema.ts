@@ -15,7 +15,7 @@ export const partner = defineType({
 		{
 			name: 'teaserText',
 			title: 'Teaser tekst',
-			type: 'internationalizedArrayText',
+			type: 'string',
 			options: {
 				rows: 3,
 			},
