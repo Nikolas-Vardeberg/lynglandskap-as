@@ -1,7 +1,9 @@
 import type { SchemaTypeDefinition } from 'sanity';
 import objects from './schemas/objects';
+import { homePage } from './schemas/pages/home-page.schema';
 
 export const schemaTypes = [
+    homePage,
 	...objects,
 ];
 
