@@ -6,6 +6,7 @@ import { transportBlocks } from './transport.schema';
 import { videoReference } from './video.schema';
 import { ContactCardBlock } from './contacts-card.schema';
 import { contactsBlock } from './contacts.schema';
+import { embedBlock } from './embed.schema';
 
 export const blocks = ({
 	...props
@@ -29,6 +30,7 @@ export const blocks = ({
 			contactsBlock, // Contacts block
 			transportBlocks, // Transport block
 			videoReference({ name: 'video' }), // Video block
+            embedBlock, // Embed block
 		],
 		...props,
 	});
@@ -42,6 +44,7 @@ export const blockArea = ({ group, title = 'Blokkområde', name = "blockArea", d
 		of: [
 			contactsBlock, // Contacts block
 			transportBlocks, // Transport block
+            embedBlock, // Embed block
 		],
 		group,
 	});
