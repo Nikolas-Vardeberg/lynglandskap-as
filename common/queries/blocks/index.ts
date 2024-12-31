@@ -5,6 +5,7 @@ import { IMAGE_GALLERY_QUERY } from './image-gallery.queries';
 import { PARTNERS_BLOCK_QUERY } from './partners-block.queries';
 import { VIDEO_BLOCK_QUERY } from './video.queries';
 import { TRANSPORT_BLOCKS_QUERIES } from './transport-block.queries';
+import { SIMPLE_RICH_TEXT_BLOCK_QUERY } from '../rich-text.queries';
 
 export const BLOCKS_QUERY = groq`{
     _key,
