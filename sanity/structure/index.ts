@@ -8,6 +8,7 @@ import { partnersStructure } from './partner.structure';
 import { pagesStructure } from './page.structure';
 import { articlesStructure } from './article.structure';
 import { videoesStructure } from './videos.structure';
+import { customerCasesStructure } from './customer-case.structure';
 
 export const structure = (S: StructureBuilder, C: ConfigContext) =>
 	S.list()
@@ -19,6 +20,7 @@ export const structure = (S: StructureBuilder, C: ConfigContext) =>
 			S.divider(),
 			pagesStructure(S, C),
 			articlesStructure(S, C),
+            customerCasesStructure(S, C),
 			videoesStructure(S, C),
 			S.divider(),
 			blockAreaDefaultsStructure(S, C),
