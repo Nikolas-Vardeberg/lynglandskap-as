@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LiveVisualEditing from "@/common/wrappers/presentation/VisualEditing";
-import DraftModeBar from "@/common/components/atoms/layout/DraftModeBar";
-import { isDraftMode } from "@/common/lib/locale";
+import { isDraftMode } from "@/lib/locale";
+import DraftModeBar from "@/atoms/layout/DraftModeBar";
+import LiveVisualEditing from "@/wrappers/presentation/VisualEditing";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
