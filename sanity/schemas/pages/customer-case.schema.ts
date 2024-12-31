@@ -5,6 +5,7 @@ import { seo } from '../objects/seo.schema';
 import { toPlainText } from '@portabletext/react';
 import { tags } from '../objects/tags.schema';
 import { teaserGroup } from '../objects/teaser.schema';
+import { slug } from '../objects/slug.schema';
 
 export const customerCase = defineType({
 	name: 'customerCase',
@@ -36,6 +37,9 @@ export const customerCase = defineType({
 			title: 'Title',
 			group: 'general',
 		},
+        slug(undefined, {
+            group: "general",
+        }),
 		{
 			name: 'entry',
 			type: 'entryRichText',

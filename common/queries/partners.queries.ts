@@ -14,5 +14,5 @@ export const PARTNER_QUERY = groq`{
         "nb": page.nb->${PAGE_REFERENCE_QUERY},
         "sv": page.sv->${PAGE_REFERENCE_QUERY},
     },
-    "teaserText": teaserText[_key == $locale][0].value,
+    "teaserText": teaserText,
 }`;

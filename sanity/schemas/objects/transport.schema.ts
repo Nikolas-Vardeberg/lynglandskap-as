@@ -18,11 +18,6 @@ export const transportBlocks = defineField({
 	icon: LI(DoorOpen, { width: 16, height: 16 }),
 	fields: [
 		{
-			name: 'flipHorizontal',
-			title: 'Flipp horisontalt',
-			type: 'boolean',
-		},
-		{
 			name: 'title',
 			title: 'Tittel',
 			type: 'string',
@@ -31,19 +26,6 @@ export const transportBlocks = defineField({
 			name: 'description',
 			title: 'Ingress',
 			type: 'simpleRichText',
-		},
-		{
-			name: 'moreLink',
-			type: 'reference',
-			title: 'Se mer lenke',
-			description: 'Lenke til siden hvor brukeren kan se mer av innholdet',
-			to: pages,
-		},
-		{
-			name: 'moreLinkTitle',
-			type: 'string',
-			title: 'Se mer tittel',
-			description: 'Tittel på lenken til siden hvor brukeren kan se mer av innholdet',
 		},
 		{
 			name: 'hideImage',

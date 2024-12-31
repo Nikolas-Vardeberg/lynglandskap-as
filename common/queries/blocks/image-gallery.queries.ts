@@ -1,5 +1,5 @@
-import { groq } from 'next-sanity';
-import { IMAGE_QUERY } from '../image.queries';
+import { groq } from "next-sanity";
+import { IMAGE_QUERY } from "../image.queries";
 
 export const IMAGE_GALLERY_QUERY = groq`{
     coverMethod,

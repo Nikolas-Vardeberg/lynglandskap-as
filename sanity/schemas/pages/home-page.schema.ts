@@ -1,5 +1,6 @@
 import { defineType } from "sanity"
 import { image } from "../objects/image.schema";
+import { sectionSchema } from "../objects/section.schema";
 
 
 export const homePage = defineType({
@@ -22,6 +23,12 @@ export const homePage = defineType({
             title: 'Hoved Bildet',
             description: 'Bilde som brukes i hero-banner på forsiden. Brukes også for SEO og sosiale medier.',
         }),
+        {
+			type: 'array',
+			name: 'sections',
+			title: 'Seksjoner',
+			of: [sectionSchema],
+		},
     ],
     preview: {
 		prepare() {

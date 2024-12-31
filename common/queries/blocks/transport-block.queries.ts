@@ -1,12 +1,10 @@
 import { groq } from 'next-sanity';
 import { IMAGE_QUERY } from '../image.queries';
 import { TAG_QUERY } from '../other/tag.queries';
-import { TEASER_QUERY } from '../teaser.queries';
 import { PAGE_REFERENCE_QUERY } from '../page/page.queries';
 
 export const TRANSPORT_BLOCKS_QUERIES = groq`{
     ...,
-    flipHorizontal,
     title,
     pages[]{
         _type,
@@ -21,7 +19,12 @@ export const TRANSPORT_BLOCKS_QUERIES = groq`{
                 _createdAt,
                 mainImage ${IMAGE_QUERY},
                 seo,
-                "teaser": ${TEASER_QUERY},
+                "teaser": {
+                    "title": coalesce(^.title, teaserTitle, title),
+                    "text": coalesce(^.teaserText, teaserText, entry),
+                    "image": coalesce(^.image, teaserImage, mainImage) ${IMAGE_QUERY},
+                    teaserLabel
+                },
                 "slug": coalesce(slug.current, "page-not-found"), 
                 tags[]->${TAG_QUERY},
                 publishedAt,
@@ -37,6 +40,4 @@ export const TRANSPORT_BLOCKS_QUERIES = groq`{
             }
         )
     },
-    moreLink -> ${PAGE_REFERENCE_QUERY},
-    moreLinkTitle,
 }`;

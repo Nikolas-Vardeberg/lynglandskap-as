@@ -11,12 +11,6 @@ export const RICH_TEXT_QUERY = groq`{
     _type,
     _type == "image" => ${IMAGE_QUERY},
     _type == "imageGallery" => ${IMAGE_GALLERY_QUERY},
-    _type == "formBlock" => form->{
-        title,
-        description,
-        formId,
-        value
-    },
     _type == "transportBlocks" => ${TRANSPORT_BLOCKS_QUERIES},
     _type == "contactsBlock" => ${CONTACTS_BLOCK_QUERY},
     _type == "video" => ${VIDEO_BLOCK_QUERY},
@@ -28,11 +22,11 @@ export const RICH_TEXT_QUERY = groq`{
                 "page": reference-> ${SIMPLE_PAGE_REFERENCE_QUERY}
             },
         },
-        []
+        [],
     ),
 }`;
 
 export const SIMPLE_RICH_TEXT_BLOCK_QUERY = groq`{
     _type,
-    text[] ${RICH_TEXT_QUERY}
+    text[] ${RICH_TEXT_QUERY},
 }`;

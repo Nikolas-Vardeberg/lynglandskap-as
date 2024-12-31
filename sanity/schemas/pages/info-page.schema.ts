@@ -4,6 +4,7 @@ import { image } from '../objects/image.schema';
 import { seo } from '../objects/seo.schema';
 import { teaserGroup } from '../objects/teaser.schema';
 import { tags } from '../objects/tags.schema';
+import { slug } from '../objects/slug.schema';
 
 export const infoPage = defineType({
 	type: 'document',
@@ -35,6 +36,9 @@ export const infoPage = defineType({
 			title: 'Title',
 			group: 'general',
 		},
+		slug(undefined, {
+			group: "general",
+		}),
 		tags({ group: "general" }),
 		image({
 			name: 'mainImage',

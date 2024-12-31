@@ -4,6 +4,7 @@ import { image } from '../objects/image.schema';
 import { seo } from '../objects/seo.schema';
 import { teaserGroup } from '../objects/teaser.schema';
 import { tags } from '../objects/tags.schema';
+import { slug } from '../objects/slug.schema';
 
 export const article = defineType({
 	type: 'document',
@@ -35,6 +36,9 @@ export const article = defineType({
 			title: 'Tittel',
 			group: 'general',
 		},
+        slug(undefined, {
+            group: "general",
+        }),
 		{
 			name: 'entry',
 			type: 'entryRichText',

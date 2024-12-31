@@ -3,6 +3,7 @@ import { teaserGroup } from '../objects/teaser.schema';
 import { blockArea, blocks } from '../objects/blocks.schema';
 import { seo } from '../objects/seo.schema';
 import { tags } from '../objects/tags.schema';
+import { slug } from '../objects/slug.schema';
 
 export const transportPage = defineType({
 	type: 'document',
@@ -38,6 +39,9 @@ export const transportPage = defineType({
 			title: 'Title',
 			group: 'general',
 		},
+        slug(undefined, {
+            group: "general",
+        }),
 		{
 			name: 'entry',
 			type: 'entryRichText',

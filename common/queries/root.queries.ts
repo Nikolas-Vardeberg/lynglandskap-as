@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 import { BLOCKS_QUERY } from "./blocks";
 import { IMAGE_QUERY } from "./image.queries";
 import { PAGE_REFERENCE_QUERY, SIMPLE_PAGE_REFERENCE_QUERY } from "./page/page.queries";
-import { SIMPLE_RICH_TEXT_BLOCK_QUERY } from "./rich-text.queries";
+import { RICH_TEXT_QUERY, SIMPLE_RICH_TEXT_BLOCK_QUERY } from "./rich-text.queries";
 
 
 export const MENU_QUERY = groq`*[_id==$menuId][0] {
@@ -33,15 +33,14 @@ export const MENU_QUERY = groq`*[_id==$menuId][0] {
     }
 }`;
 
-export const HOMEPAGE_QUERY = groq`*[_id==$homepageId][0] {  
+export const HOMEPAGE_QUERY = groq`*[_id=="homePage"][0] {  
     _id,
     _type,
     title,
-    description ${SIMPLE_RICH_TEXT_BLOCK_QUERY},
-    "mainImage": hero.mainImage ${IMAGE_QUERY},
+    description,
     "sections": sections[] {
         ...,
-        blocks[] ${BLOCKS_QUERY}
+        blocks[] ${BLOCKS_QUERY},
     }
 }`;
 

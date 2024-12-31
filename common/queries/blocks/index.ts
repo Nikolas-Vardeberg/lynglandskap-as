@@ -15,7 +15,7 @@ export const BLOCKS_QUERY = groq`{
     _type == "imageGallery" => ${IMAGE_GALLERY_QUERY},
     _type == "video" => ${VIDEO_BLOCK_QUERY},
     _type == "image" => {
-        "image": ${IMAGE_QUERY}
+        "image": ${IMAGE_QUERY},
     },
     _type == "simplerRichText" => ${SIMPLE_RICH_TEXT_BLOCK_QUERY},
     _type == "partnersList" => ${PARTNERS_BLOCK_QUERY},
