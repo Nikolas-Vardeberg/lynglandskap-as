@@ -38,7 +38,6 @@ export const image = ({ options, aspect, includeWidthOptions, ...props }: Props)
 							title: 'Bildeforholdet',
 							options: {
 								list: ['auto', '1:1', '16:9', '4:3'],
-								aiAssist: { exclude: true },
 							},
 							initialValue: '16:9',
 						},
@@ -56,7 +55,6 @@ export const image = ({ options, aspect, includeWidthOptions, ...props }: Props)
 									{ title: 'Halv bredde', value: 0.5 },
 									{ title: 'Kvart bredde', value: 0.25 },
 								],
-								aiAssist: { exclude: true },
 							},
 							initialValue: 1,
 						},

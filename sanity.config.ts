@@ -13,6 +13,8 @@ import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schema'
 import {structure} from './sanity/structure'
 import { presentationTool } from 'sanity/presentation'
+import { media, mediaAssetSource } from 'sanity-plugin-media';
+import { mediaAssetPlugin } from '@/organisms/input/SanityMediaField'
 
 export default defineConfig({
   basePath: '/studio',
@@ -31,6 +33,11 @@ export default defineConfig({
 					enable: '/api/draft-mode/enable',
 				},
 			},
+		}),
+    media(),
+    mediaAssetPlugin({
+			altTextFieldName: 'altTextOverride',
+			descriptionFieldName: 'description',
 		}),
   ],
 })
