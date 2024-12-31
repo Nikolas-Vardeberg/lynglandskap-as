@@ -2,6 +2,7 @@ import { defineField, defineType } from 'sanity';
 import { teaserGroup } from '../objects/teaser.schema';
 import { blockArea, blocks } from '../objects/blocks.schema';
 import { seo } from '../objects/seo.schema';
+import { tags } from '../objects/tags.schema';
 
 export const transportPage = defineType({
 	type: 'document',
@@ -43,7 +44,7 @@ export const transportPage = defineType({
 			title: 'Entry',
 			group: 'general',
 		},
-		...teaserGroup,
+        tags({ group: "general" }),
 		blocks({
 			group: 'general',
 		}),
@@ -51,6 +52,7 @@ export const transportPage = defineType({
 			group: 'general',
 		}),
 		seo({ group: 'seo' }),
+        ...teaserGroup,
 	],
 	preview: {
 		select: {

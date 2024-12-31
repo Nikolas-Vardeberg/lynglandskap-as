@@ -3,6 +3,7 @@ import { defineType } from 'sanity';
 import { image } from '../objects/image.schema';
 import { seo } from '../objects/seo.schema';
 import { teaserGroup } from '../objects/teaser.schema';
+import { tags } from '../objects/tags.schema';
 
 export const article = defineType({
 	type: 'document',
@@ -49,6 +50,7 @@ export const article = defineType({
 			initialValue: new Date().toISOString(),
 			validation: (Rule) => Rule.required(),
 		},
+        tags({ group: 'general' }),
 		image({
 			name: 'mainImage',
 			group: 'general',

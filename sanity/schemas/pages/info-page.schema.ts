@@ -3,6 +3,7 @@ import { blockArea, blocks } from '../objects/blocks.schema';
 import { image } from '../objects/image.schema';
 import { seo } from '../objects/seo.schema';
 import { teaserGroup } from '../objects/teaser.schema';
+import { tags } from '../objects/tags.schema';
 
 export const infoPage = defineType({
 	type: 'document',
@@ -34,6 +35,7 @@ export const infoPage = defineType({
 			title: 'Title',
 			group: 'general',
 		},
+		tags({ group: "general" }),
 		image({
 			name: 'mainImage',
 			group: 'general',

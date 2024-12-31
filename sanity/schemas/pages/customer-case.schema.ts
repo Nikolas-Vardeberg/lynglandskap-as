@@ -3,6 +3,8 @@ import { defineType } from 'sanity';
 import { image } from '../objects/image.schema';
 import { seo } from '../objects/seo.schema';
 import { toPlainText } from '@portabletext/react';
+import { tags } from '../objects/tags.schema';
+import { teaserGroup } from '../objects/teaser.schema';
 
 export const customerCase = defineType({
 	name: 'customerCase',
@@ -56,6 +58,7 @@ export const customerCase = defineType({
 			description: 'Kundenavn brukt i transportinnganger',
 			group: 'general',
 		},
+        tags({ group: 'general' }),
 		image({
 			name: 'mainImage',
 			group: 'general',
@@ -85,38 +88,13 @@ export const customerCase = defineType({
 			group: 'general',
 			of: [{ type: 'reference', to: [{ type: 'industry' }] }],
 		},
-		{
-			name: 'teaserTitle',
-			type: 'string',
-			title: 'Teaser-tittel',
-			description: 'Tittel brukt i transportinnganger. Bruker hodetittel hvis ikke satt',
-			group: 'teaser',
-			validation: (Rule) => Rule.max(60).warning('Tittelen er for lang'),
-		},
-		{
-			name: 'teaserText',
-			type: 'simpleRichText',
-			title: 'Teaser-tekst',
-			description: 'Tekst brukt i transportinnganger. Bruker ingress hvis ikke satt',
-			group: 'teaser',
-			validation: (R) =>
-				R.custom((value) => {
-					if (!value) return true;
-					// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-					const text = toPlainText(value as any[])?.trim();
-
-					if (text?.length > 300) {
-						return `Teksten er for lang (${text.length}/300 tegn)`;
-					}
-					return true;
-				}).warning(),
-		},
 		image({
 			group: 'teaser',
 			name: 'teaserImage',
 			title: 'Teaser-bilde',
 			description: 'Bilde brukt i transportinnganger og SEO (overskriver hovedbilde)',
 		}),
+        ...teaserGroup,
 	],
 	preview: {
 		select: {
