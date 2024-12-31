@@ -14,6 +14,8 @@ import { IMenu } from "./layout/menu.types";
 export type Override<T, U> = Omit<T, keyof U> & U;
 export type Nullable<T> = T | null;
 
+export type Subpages = InfoPage | TransportPage;
+
 export type SanityContentTypeBase<T extends string> = Override<
 	SanityDocument,
 	{
