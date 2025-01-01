@@ -38,6 +38,7 @@ export const HOMEPAGE_QUERY = groq`*[_id==$homepageId][0] {
     _type,
     title,
     description,
+    "mainImage": mainImage${IMAGE_QUERY},
     "sections": sections[] {
         ...,
         blocks[] ${BLOCKS_QUERY},

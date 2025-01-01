@@ -82,12 +82,8 @@ export type IHomePage = {
 	_id: string;
 	_type: 'homePage';
 	mainImage: LynglandskapImage;
-	hero: {
-		title: string;
-		description: SanityRichtTextType;
-		reference: Page;
-		linkText: string;
-	};
+	title: string;
+	description: SanityRichtTextType;
 	sections: CCSection[];
 	overrideBottomContent: boolean;
 	bottomContent?: BottomContentData;
@@ -122,6 +118,18 @@ export type RootSEO = {
 		};
 	};
 };
+
+export type RichTextPassThroughProps = {
+	spanStart?: SizeProps;
+	span?: SizeProps;
+	wrapperClassName?: string;
+	classNameByType?: (type: string) => string;
+};
+
+export interface SizeProps {
+	sm?: number;
+	lg?: number;
+}
 
 export type ExternalPageReference = SanityDocument & {
 	_type: 'externalPageReference';
