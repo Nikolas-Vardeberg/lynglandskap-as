@@ -1,6 +1,7 @@
 import SanityImage from "@/atoms/SanityImage";
 import { TransportItemProps } from "@/types/blocks/transport.types";
 import { clsx } from "@/utils/classes";
+import { buildUrl } from "@/utils/url";
 import { toPlainText } from "next-sanity";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ const TransportItem = ({ page, block, flex, span, hideImage, compact }: Transpor
 
     return(
         <Link
-            href="/"
+            href={buildUrl(page) ?? page.url}
             className={clsx(
                 "flex flex-col w-full h-full overflow-hidden !no-underline",
             )}
