@@ -19,13 +19,13 @@ export const seo = defineType({
 			name: 'title',
 			type: 'string',
 			title: 'Tittel',
-			initialValue: 'Lynglandskap Consulting AS',
+			initialValue: 'Lynglandskap AS',
 		},
 		{
 			name: 'template',
 			type: 'string',
 			title: 'Template',
-			initialValue: '%s | Lynglandskap Consulting AS',
+			initialValue: '%s | Lynglandskap AS',
 			description:
 				"Template for SEO tittel, bruk %s for å sette inn tittel, resten av tittelen er statisk. Hvis du har '%s - Lynglandskap' vil tittelen bli 'Tittel - Lynglandskap' på undersider.",
 		},
