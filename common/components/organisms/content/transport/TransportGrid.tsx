@@ -47,7 +47,7 @@ const TransportGrid = ({ pages, compact = false, block, hideImage }: TransportGr
 
 	if (GRID_LAYOUTS.FEATURED[layoutType].includes(pagesLength)) {
 		return (
-			<div className='grid w-full grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-12'>
+			<div className='grid w-full grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-12 bg-white'>
 				<TransportItem
 					key={pages[0]._key}
 					page={pages[0]}

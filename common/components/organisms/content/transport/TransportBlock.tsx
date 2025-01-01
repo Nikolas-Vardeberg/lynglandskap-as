@@ -14,7 +14,7 @@ export default function TransportBlock(block: ITransportBlock & { isRichText?: b
             {(block.title || block.description) && (
                 <div className='flex flex-col max-w-[1400px]'>
                     {block.title && <SectionHeading title={block.title} /> }
-                    {block.description && ( <RichTextSimple  blocks={block.description} elementClassName="entry" /> )}
+                    {block.description && ( <RichTextSimple  blocks={block.description} /> )}
                 </div>
             )}
 

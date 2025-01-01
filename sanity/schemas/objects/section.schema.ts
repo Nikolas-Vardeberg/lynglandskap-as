@@ -4,12 +4,12 @@ import { PanelsTopLeft } from 'lucide-react';
 import { blocks } from './blocks.schema';
 
 const sectionColors = [
-	{ title: 'Hvit', value: 'white' },
+    { title: 'Hvit', value: 'white' },
 ];
 
 const getColorTitle = (value: string) => {
-	const option = sectionColors.find((opt) => opt.value === value);
-	return option?.title || value;
+    const option = sectionColors.find((opt) => opt.value === value);
+    return option?.title || value;
 };
 
 export const sectionSchema = defineField({

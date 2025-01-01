@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-white font-dovre-social text-gray-800 antialiased;
+  @apply bg-green-100 font-dovre-social text-gray-800 antialiased;
 }
 
 h1 {

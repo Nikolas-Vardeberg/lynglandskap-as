@@ -6,6 +6,7 @@ import DraftModeBar from "@/atoms/layout/DraftModeBar";
 import { isDraftMode } from "@/lib/locale";
 import getRootData from "@/lib/data/getRootData";
 import { GlobalProvider } from "@/providers/global-provider";
+import Menu from "@/organisms/navigation/Menu";
 
 export default async function ClientLayout({
     children,
@@ -22,6 +23,7 @@ export default async function ClientLayout({
                     ...data,
                 }}
             >
+                <Menu />
                 {draft && <DraftModeBar />}
                 <main>{children}</main>
             </GlobalProvider>
