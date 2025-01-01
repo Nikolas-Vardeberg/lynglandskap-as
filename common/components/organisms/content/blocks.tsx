@@ -10,6 +10,10 @@ const ImageBlock = dynamic(() => import('@/organisms/content/ImageBlock'), {
 	ssr: true,
 });
 
+const TransportBlock = dynamic(() => import('./transport/TransportBlock'), {
+	ssr: true,
+});
+
 export const RenderBlock = ({
 	block,
 	richTextProps,
@@ -26,10 +30,18 @@ export const RenderBlock = ({
 
         case "simplerRichText":
             return(
-                <div className='flex flex-col px-8 py-10 max-w-[1400px] mx-auto '> 
+                <div className='flex flex-col px-8 sm:px-20 py-10 max-w-[1400px] mx-auto '> 
                     <RichText id="simple-rich-text" blocks={block.text} {...richTextProps} />
                 </div>
             )
+
+        case "transportBlocks":
+            return(
+                <div className='flex flex-col px-8 sm:px-20 py-10 w-full'>
+                    <TransportBlock {...block} isRichText={isRichText} />
+                </div>
+            )
+
 
             default:
                 console.warn('missing block:', block);

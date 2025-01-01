@@ -28,7 +28,7 @@ export default function HomeView({ data }: { data: IHomePage }) {
 		data.sections?.map((section, i) => (
 			<div
 				key={`${section.color}-${i}`}
-				className={`bg-${section.color} bg-green-400`}
+				className={`bg-${section.color}`}
 			>
 				<Blocks
 					blocks={section.blocks}
