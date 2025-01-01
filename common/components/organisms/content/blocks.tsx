@@ -1,3 +1,4 @@
+import RichText, { RichTextSimple } from '@/atoms/content/RichText';
 import ReactComment from '@/atoms/react-comment';
 import type { Block, Block as BlockType } from '@/types/blocks/blocks.types';
 import { RichTextPassThroughProps } from '@/types/root.types';
@@ -22,6 +23,13 @@ export const RenderBlock = ({
             return(
                 <ImageBlock {...block} />
             );
+
+        case "simplerRichText":
+            return(
+                <div className='flex flex-col px-8 py-10 max-w-[1400px] mx-auto '> 
+                    <RichText id="simple-rich-text" blocks={block.text} {...richTextProps} />
+                </div>
+            )
 
             default:
                 console.warn('missing block:', block);

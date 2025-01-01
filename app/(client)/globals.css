@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-white font-dovre-social text-black antialiased;
+  @apply bg-white font-dovre-social text-gray-800 antialiased;
 }
 
 h1 {
@@ -33,7 +33,7 @@ strong {
 
 p,
 li {
-    @apply text-base/7 font-normal lg:text-lg/8;
+    @apply text-xl font-normal lg:text-2xl/8;
 }
 
 .lead,
@@ -67,8 +67,12 @@ caption,
   @apply text-base/7;
 }
 
-.entry, .entry p, .entry li {
+.entry p, li {
   @apply text-xl/[36px] lg:text-3xl/[36px] lg:font-light;
+}
+
+.entry {
+  @apply font-dovre-social text-xl/[44px] lg:text-3xl/[44px] lg:font-light;
 }
 
 label {
@@ -87,7 +91,7 @@ label {
     @apply mt-5 md:mt-7 mb-3;
 }
 
-.p-p{
+portable-text.p-p{
   margin-bottom: 0px;
 }
 

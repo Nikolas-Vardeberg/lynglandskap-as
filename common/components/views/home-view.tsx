@@ -10,7 +10,7 @@ export default function HomeView({ data }: { data: IHomePage }) {
 
     const renderHero = () => (
         <div className="flex flex-col px-8 sm:px-20 py-10 gap-8 relative">
-            <div className="flex flex-col items-start justify-start gap-6 w-9/12">
+            <div className="flex flex-col items-start justify-start gap-6 w-full sm:w-9/12">
                 {data.title && <SectionHeading title={data.title} />}
                 {data.description && <RichTextSimple blocks={data.description} elementClassName="entry" />}
             </div>
@@ -28,7 +28,7 @@ export default function HomeView({ data }: { data: IHomePage }) {
 		data.sections?.map((section, i) => (
 			<div
 				key={`${section.color}-${i}`}
-				className={`bg-${section.color} pb-10 lg:pb-20 ${i > 0 ? 'pt-5 lg:pt-10' : 'pt-10 lg:pt-20'}`}
+				className={`bg-${section.color} bg-green-400`}
 			>
 				<Blocks
 					blocks={section.blocks}
