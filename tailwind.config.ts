@@ -7,11 +7,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "dovre-social": ['var(--font-dovre-social)', 'sans'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;

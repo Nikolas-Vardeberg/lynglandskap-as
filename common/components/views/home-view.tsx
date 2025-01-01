@@ -9,10 +9,10 @@ import { SectionHeading } from "@/atoms/Heading";
 export default function HomeView({ data }: { data: IHomePage }) {
 
     const renderHero = () => (
-        <div className="flex flex-col px-4 sm:px-5 py-10 gap-8 relative">
-            <div className="flex flex-col items-start justify-start gap-6 max-w-[1200px]">
+        <div className="flex flex-col px-8 sm:px-20 py-10 gap-8 relative">
+            <div className="flex flex-col items-start justify-start gap-6 w-9/12">
                 {data.title && <SectionHeading title={data.title} />}
-                {data.description && <RichTextSimple blocks={data.description} />}
+                {data.description && <RichTextSimple blocks={data.description} elementClassName="entry" />}
             </div>
             {data.mainImage && (
                 <SanityImage 

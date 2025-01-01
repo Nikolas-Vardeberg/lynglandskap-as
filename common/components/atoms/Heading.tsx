@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { clsx } from '@/utils/classes';
+import { ArrowRight } from 'lucide-react';
 
 type HeaderProps = {
 	title: string | ReactNode;

@@ -1,3 +1,110 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply bg-white font-dovre-social text-black antialiased;
+}
+
+h1 {
+  @apply text-[38px]/[42px] text-black lg:text-[58px]/[64px];
+}
+
+h2 {
+  @apply text-[32px]/10 text-black lg:text-[42px]/[50px];
+}
+
+h3 {
+  @apply text-[28px]/9 text-black lg:text-[32px]/[45px];
+}
+
+h4 {
+  @apply text-[22px]/8 text-black lg:text-[26px]/[34px];
+}
+
+h5 {
+  @apply text-sm/[26px] uppercase text-green-400;
+}
+
+b,
+strong {
+    font-weight: 500;
+}
+
+p,
+li {
+    @apply text-base/7 font-normal lg:text-lg/8;
+}
+
+.lead,
+.lead a,
+.lead p,
+.lead li {
+    @apply text-xl font-normal lg:text-[22px]/8;
+}
+
+.fotocred {
+  @apply italic;
+}
+
+.text-small,
+.fotocred {
+    @apply text-sm/[26px] mb-1.5 lg:text-base/7;
+}
+
+caption,
+.caption,
+.published-at {
+    @apply text-xs/[22px] mb-0 lg:text-sm/[26px];
+}
+
+
+.published-at {
+  @apply text-nowrap text-gray-600;
+}
+
+.share-text {
+  @apply text-base/7;
+}
+
+.entry, .entry p, .entry li {
+  @apply text-xl/[36px] lg:text-3xl/[36px] lg:font-light;
+}
+
+label {
+  @apply text-base/[22px] font-normal lg:text-lg/[22px];
+}
+
+.quote {
+  @apply text-[22px]/8 italic font-light tracking-wide;
+}
+
+.p-h2,
+.p-h3,
+.p-h4,
+.p-h5,
+.p-h6 {
+    @apply mt-5 md:mt-7 mb-3;
+}
+
+.p-p{
+  margin-bottom: 0px;
+}
+
+.p-ul{
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.p-ol{
+  list-style: decimal;
+  margin-left: 1.5rem;
+}
+
+.no-text-margin p {
+  margin: 0 !important;
+}
+
+.content-height {
+  min-height: calc(100vh - 308px);
+}
